@@ -8,7 +8,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var client *ent.Client
+var dbClient *ent.Client
 
 func Connect() {
 	client, err := ent.Open("sqlite3", "file:ent?mode=memory&cache=shared&_fk=1")
@@ -19,12 +19,14 @@ func Connect() {
 	if err := client.Schema.Create(context.Background()); err != nil {
 		log.Fatalf("failed creating schema resources: %v", err)
 	}
+
+	dbClient = client
 }
 
 func Disconnect() {
-	client.Close()
+	dbClient.Close()
 }
 
 func GetClient() *ent.Client {
-	return client
+	return dbClient
 }
