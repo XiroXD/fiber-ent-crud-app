@@ -16,10 +16,6 @@ func init() {
 	db.Connect()
 }
 func main() {
-	server()
-}
-
-func server() {
 	app := fiber.New()
 
 	// Listen from a different goroutine
@@ -42,5 +38,4 @@ func server() {
 
 	db.Disconnect()
 	fmt.Println("Fiber was successful shutdown.")
-
 }
