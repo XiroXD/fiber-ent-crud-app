@@ -10,6 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 
 	"github.com/XiroXD/fiber-ent-crud-app/provider/db"
+	"github.com/XiroXD/fiber-ent-crud-app/router"
 )
 
 func init() {
@@ -17,6 +18,8 @@ func init() {
 }
 func main() {
 	app := fiber.New()
+
+	router.Setup(app)
 
 	// Listen from a different goroutine
 	go func() {
