@@ -11,5 +11,8 @@ func init() {
 func main() {
 	app := fiber.New()
 
+	// Close database connection before exit
+	defer db.Disconnect()
+
 	app.Listen(":3000")
 }
