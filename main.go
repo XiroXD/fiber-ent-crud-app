@@ -16,6 +16,7 @@ import (
 func init() {
 	db.Connect()
 }
+
 func main() {
 	app := fiber.New()
 
