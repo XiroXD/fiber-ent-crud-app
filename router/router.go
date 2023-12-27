@@ -1,8 +1,9 @@
 package router
 
 import (
-	"github.com/XiroXD/fiber-ent-crud-app/api/controllers"
 	"github.com/gofiber/fiber/v2"
+
+	"github.com/XiroXD/fiber-ent-crud-app/api/controllers"
 )
 
 func Setup(app *fiber.App) {
@@ -11,4 +12,5 @@ func Setup(app *fiber.App) {
 	user := app.Group("/user")
 
 	user.Get("/", userController.Index)
+	user.Post("/", userController.Create)
 }

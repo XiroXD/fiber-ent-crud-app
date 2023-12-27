@@ -4,8 +4,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/XiroXD/fiber-ent-crud-app/ent"
 	_ "github.com/mattn/go-sqlite3"
+
+	"github.com/XiroXD/fiber-ent-crud-app/ent"
 )
 
 var dbClient *ent.Client
