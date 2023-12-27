@@ -20,7 +20,6 @@ func (User) Fields() []ent.Field {
 		field.UUID("id", uuid.UUID{}).Default(uuid.New).Unique(),
 		field.String("name").NotEmpty(),
 		field.String("email").NotEmpty().Unique(),
-		field.String("password").NotEmpty().Sensitive(),
 		field.Time("created_at").Default(time.Now).Immutable(),
 		field.Time("updated_at").Default(time.Now).UpdateDefault(time.Now),
 	}
